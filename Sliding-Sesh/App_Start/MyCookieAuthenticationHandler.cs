@@ -87,7 +87,9 @@ namespace Sliding_Sesh.App_Start
 
                     // TODO: If cookie expires, redirect to controller for AAD sign out
                     Response.Redirect("/Account/SignOut");
-
+                    
+                    // Or, you could set some flag in the OWIN environment and catch this in the app
+                    //Request.Environment.Add("auth_cookie_expired", true);
                     return null;
                 }
 
